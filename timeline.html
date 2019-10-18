@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<title>OnClickHub</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="timeline.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body>
+
+<div class="timebody w3-center">
+<section class="timeline ">
+  <ul>
+    <li>
+      <div class="w3-card w3-hover-shadow">
+        <h3><b>Contact our client</b></h3> 
+        <img src="h1.png" class="w3-image">
+      </div>
+    </li>
+    <li>
+      <div class="w3-card w3-hover-shadow">
+        <h3><b>Get your Idea</b></h3> 
+        <img src="h2.jpg" class="w3-image">
+      </div>
+    </li>
+    <li>
+      <div class="w3-card w3-hover-shadow">
+        <h3><b>Understand Your Idea</b></h3> 
+        <img src="h3.jpeg" class="w3-image">
+      </div>
+    </li>
+    <li>
+      <div class="w3-card w3-hover-shadow">
+        <h3><b>Improvise the Idea : Making it Awesome</b></h3> 
+        <img src="h4.jpg" class="w3-image">
+      </div>
+    </li>
+    <li>
+      <div class="w3-card w3-hover-shadow">
+        <h3><b>Build Your Dream Website</b></h3> 
+        <img src="h5.png" class="w3-image">
+      </div>
+    </li>
+    <li>
+      <div class="w3-card w3-hover-shadow">
+        <h3><b>Feedback And maintenance</b></h3> 
+        <img src="h6.jpg" class="w3-image">
+      </div>
+    </li>
+    
+  </ul>
+</section>
+</div>
+<script type="text/javascript">
+  (function() {
+
+  'use strict';
+
+  // define variables
+  var items = document.querySelectorAll(".timeline li");
+
+  // check if an element is in viewport
+  // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
+  function isElementInViewport(el) {
+    var rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  function callbackFunc() {
+    for (var i = 0; i < items.length; i++) {
+      if (isElementInViewport(items[i])) {
+        items[i].classList.add("in-view");
+      }
+    }
+  }
+
+  // listen for events
+  window.addEventListener("load", callbackFunc);
+  window.addEventListener("resize", callbackFunc);
+  window.addEventListener("scroll", callbackFunc);
+
+})();
+</script>

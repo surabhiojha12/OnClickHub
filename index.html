@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html>
+<title>OnClickHub</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" type="text/css" href="timeline.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!--fancybox-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+<script src="timeline.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<link rel="icon" type="image/png" href="ochlo.png"/>
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+    height: 100%;
+    
+    line-height: 1.8;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1,.bgimg-2,.bgimg-3,.bgimg-4 {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+
+.bgimg-4 {
+    background-image: url('1c.jpg');
+}
+.bgimg-3 {
+    background-image: url('g4.jpg');
+    min-height: 100%;
+}
+.bgimg-2{
+  background-image: url('g3.jpg');
+  min-height: 100%;
+}
+
+
+hr{
+  align-self: center;
+}
+a img{
+  
+  width: 30%;
+}
+
+canvas {
+  display: block;
+  vertical-align: bottom;
+}
+/* ---- particles.js container ---- */
+
+#home {
+ 
+  width: 100%;
+  height: 100%;
+  
+  background-color: #000000;
+  background-size: cover;
+}
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1, .bgimg-2, .bgimg-3,.bgimg-4 {
+        background-attachment: scroll;
+    }
+}
+</style>
+<body>
+<!-- Navbar (sit on top) -->
+<div class="w3-top w3-center w3-black">
+  <div class=" " id="myNavbar">
+    <!--<a href="#" class="w3-bar-item w3-button w3-wide w3-hover-white "><i><img src="ochlo.png" style="max-height: 50px;"></i></a>-->
+
+      <div class="w3-hide-small w3-margin-top">
+      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-home"></i> HOME</a>
+      <a href="#about" class="w3-bar-item w3-button"><i class="fa fa-user"></i> ABOUT US</a>
+      <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> WORK</a>
+      <a href="#services" class="w3-bar-item w3-button"><i class="fa fa-gears"></i> SERVICES</a>
+      <a href="#pricing" class="w3-bar-item w3-button"><i class="fa fa-money"></i> PRICING</a>
+      <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+    </div>
+
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars" style="max-height:30px;"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="#" onclick="w3_close()" class="w3-bar-item w3-button">HOME</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT US</a>
+  <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
+  <a href="#services" onclick="w3_close()" class="w3-bar-item w3-button">SERVICES</a>
+  <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">PRICING</a>
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+</nav>
+
+
+<!-- First Parallax Image with Logo Text -->
+<div class="bgimg-1 w3-display-container  w3-center" id="home" style="background-color: black; min-height: 100%">
+
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <a ><i><img src="ochlo.png" class=" w3-white " style="max-width:200px; border-radius: 50%;"></i></a><br><br>
+    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity" style="font-style: italic; font-size: 40px">OnClickHub <i class="fa fa-laptop"></i><br></span> 
+    
+     <h4 class="w3-center w3-padding-large w3-black w3-large w3-wide w3-animate-opacity w3-hide-small">Innovation Beyond Perfection</h4>
+</div>
+</div>
+<script >
+	particlesJS.load('home','particles.json',
+		function(){
+			console.log("particles.json loaded....");
+		})
+</script>
+
+<div  class="w3-padding-32">
+<div class="w3-content w3-center " >
+    <h2 class="w3-padding-32"><strong>OUR SPECIALITY </strong><i class="fa fa-diamond "></i></h2>
+<div class="w3-row">
+  <div class="w3-third w3-card w3-light-grey "  style="min-height: 250px">
+     <i class="fa fa-code w3-padding-16" style="font-size: 70px"></i>
+      <h3><b>Development</b></h3>
+      <p>We have best in class team to analayze your idea perspective and transform them to perfect secure scalable implemented design.</p>
+  </div>
+  <div class="w3-third w3-card" style="min-height: 250px">
+    <img class="w3-image" src="g2.jpg" style="min-height: 250px">
+  </div>
+  <div class="w3-third w3-card w3-light-grey " style="min-height: 250px">
+    <i class="fas fa-group w3-padding-16" style="font-size: 70px"></i>
+    <h3><b>Branding</b></h3>
+      <p>We can help you to estabish your brands by engaging your customers digitally through online Marketting , Social media marketting ,SEO, Internet Adds.</p>
+  </div>
+</div>
+<div class="w3-row">
+  <div class="w3-third w3-card" style="min-height: 250px">
+    <img class="w3-image" src="g1.jpg" style="min-height: 250px">
+  </div>
+  
+  <div class="w3-third w3-card w3-light-grey " style="min-height: 250px">
+     <i class="fa fa-handshake-o w3-padding-16" style="font-size: 70px"></i>
+   <h3><b>Support</b></h3>
+      <p>We provide our client with support service to ensure that their solutions stays updated with recent changing cutting edge technologies. </p>
+  </div>
+  <div class="w3-third w3-card" style="min-height: 250px">
+    <img class="w3-image" src="3c.jpg" style="min-height: 250px">
+  </div>
+  </div>
+</div>
+</div>
+
+
+<!-- Header with full-height image -->
+<div class="w3-display-container  w3-padding-32 w3-text-white" style=" background-color: #2B2B2B" id="about">
+  
+      <!-- First Grid -->
+
+  <div class="w3-content w3-large">
+    
+      <h2 class="w3-center" ><strong>ABOUT US </strong><i class="fa fa-user"></i></h2>
+      <hr>
+      
+
+      <p class="w3-text-white">We are a web development company. We give shape to your ideas and bring your imagination to reality. We give special attention to customer needs to deliver the project best for their business. 
+Take your business online with us and let the world know you.</p>
+</div>
+<div class="w3-content">
+ <div class="w3-row-padding w3-center " style="margin-top:64px">
+
+    <div class="w3-quarter w3-card w3-hover-shadow " style="min-height: 220px">
+      <i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
+      <p class="w3-large">Responsive</p>
+      <p>Our websites can be viewed and scales to every device of any size.</p>
+    </div>
+    <div class="w3-quarter w3-card w3-hover-shadow" style="min-height: 220px">
+      <i class="fa fa-heart w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Incredible UI</p>
+      <p>Get the best User infertace in your website from our specialised front end developers.</p>
+    </div>
+    <div class="w3-quarter w3-card w3-hover-shadow" style="min-height: 220px">
+      <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Design</p>
+      <p>Let us design your company's name and fame with our logo and graphic designs.</p>
+    </div>
+    <div class="w3-quarter w3-card w3-hover-shadow" style="min-height: 220px">
+      <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Support</p>
+      <p>We provide lifetime support for the project we make for you.</p>
+    </div>
+  </div>
+</div>
+</div>
+<!--how we work-->
+<div class="w3-container  w3-center w3-padding-64 w3-light-grey"  id="feature" >
+<h2 class="w3-center  "><b><i class="fa fa-cog"></i> HOW WE WORK</b></h2>
+<h4 ><b>Our Work Procedure.</b></h4>
+<br>
+<div class="timebody w3-center">
+<section class="timeline ">
+  <ul>
+    <li>
+      <div class="w3-card w3-hover-shadow">
+        <h3><b>Contact our client</b></h3> 
+        <img src="h1.png" class="w3-image">
+      </div>
+    </li>
+    <li>
+      <div class="w3-card w3-hover-shadow">
+        <h3><b>Get your Idea</b></h3> 
+        <img src="h2.jpg" class="w3-image">
+      </div>
+    </li>
+    <li>
+      <div class="w3-card w3-hover-shadow">
+        <h3><b>Understand Your Idea</b></h3> 
+        <img src="h3.jpeg" class="w3-image">
+      </div>
+    </li>
+    <li>
+      <div class="w3-card w3-hover-shadow">
+        <h3><b>Improvise the Idea : Making it Awesome</b></h3> 
+        <img src="h4.jpg" class="w3-image">
+      </div>
+    </li>
+    <li>
+      <div class="w3-card w3-hover-shadow">
+        <h3><b>Build Your Dream Website</b></h3> 
+        <img src="h5.png" class="w3-image">
+      </div>
+    </li>
+    <li>
+      <div class="w3-card w3-hover-shadow">
+        <h3><b>Feedback And maintenance</b></h3> 
+        <img src="h6.jpg" class="w3-image">
+      </div>
+    </li>
+    
+  </ul>
+</section>
+</div>
+<!--<div class="w3-content w3-display-container">
+
+<div class="w3-display-container mySlides">
+  <img src="h1.png" style="width:100%;max-height: 500px">
+  <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+    Contact our client.
+  </div>
+</div>
+
+<div class="w3-display-container mySlides">
+  <img src="h2.jpg" style="width:100%;max-height: 500px">
+  <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
+    Get your Idea.
+  </div>
+</div>
+
+<div class="w3-display-container mySlides">
+  <img src="h3.jpeg" style="width:100%;max-height: 500px">
+  <div class="w3-display-topleft w3-large w3-container w3-padding-16 w3-black">
+    Understand Your Idea.
+  </div>
+</div>
+
+<div class="w3-display-container mySlides">
+  <img src="h4.jpg" style="width:100%;max-height: 500px">
+  <div class="w3-display-topright w3-large w3-container w3-padding-16 w3-black">
+    Improvise the Idea : Making it Awesome
+  </div>
+</div>
+
+<div class="w3-display-container mySlides">
+  <img src="h5.png" style="width:100%;max-height: 500px">
+  <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+   Build Your Dream Website.
+  </div>
+</div>
+
+<div class="w3-display-container mySlides">
+  <img src="h6.jpg" style="width:100%;max-height: 500px">
+  <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
+    Feedback And maintenance.
+  </div>
+</div>
+
+<button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
+<button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
+</div>-->
+</div>
+
+<!--work-->
+<!-- Work Section -->
+<div class="w3-container w3-light-grey w3-center w3-padding-32 bgimg-3"  id="work">
+  
+  <div class="w3-content w3-text-white">
+  <h1 ><i class="fa fa-th"></i> <strong> OUR WORK </strong></h1>
+  <h4 ><b>What we've done for our clients</b></h4>
+
+  <div class="w3-row-padding" style="margin-top:64px">
+    <div class="w3-col l4 m6">
+      <a data-fancybox="gallery" href="w1.png" ><img src="w1.png" style="width:100%"></a>
+    </div>
+    <div class="w3-col l4 m6">
+      <a data-fancybox="gallery" href="w2.png" ><img src="w2.png" style="width:100%"></a>
+    </div>
+    <div class="w3-col l4 m6">
+     <a data-fancybox="gallery" href="w3.png" ><img src="w3.png" style="width:100%"></a>
+    </div>
+    
+  </div>
+  <div class="w3-row-padding" >
+    <div class="w3-col l4 m6">
+      <a data-fancybox="gallery" href="w4.png" ><img src="w4.png" style="width:100%"></a>
+    </div>
+    <div class="w3-col l4 m6">
+      <a data-fancybox="gallery" href="w5.png" ><img src="w5.png" style="width:100%"></a>
+    </div>
+    <div class="w3-col l4 m6">
+     <a data-fancybox="gallery" href="w6.png" ><img src="w6.png" style="width:100%"></a>
+    </div>
+    
+  </div>
+  <div class="w3-row-padding" >
+    <div class="w3-col l4 m6">
+      <a data-fancybox="gallery" href="w7.png" ><img src="w7.png" style="width:100%"></a>
+    </div>
+    <div class="w3-col l4 m6">
+      <a data-fancybox="gallery" href="w8.png" ><img src="w8.png" style="width:100%"></a>
+    </div>
+    <div class="w3-col l4 m6">
+     <a data-fancybox="gallery" href="w13.png" ><img src="w13.png" style="width:100%"></a>
+    </div>
+    
+  </div>
+  
+  
+ 
+</div>
+
+<script type="text/javascript">
+  $('[data-fancybox]').fancybox({
+  loop: true,
+   buttons: [
+        "zoom",
+        //"share",
+        "slideShow",
+        //"fullScreen",
+        "download",
+        "thumbs",
+        "close"
+    ],
+
+});
+</script>
+
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+  <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" title="Close Modal Image">×</span>
+  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <img id="img01" class="w3-image">
+    <p id="caption" class="w3-opacity w3-large"></p>
+  </div>
+</div>
+</div>
+<!--our clents-->
+<div class="w3-container w3-black w3-padding-32 w3-hide-small w3-hide-medium">
+
+  <div class="w3-content">
+    <h2 class="w3-text-white w3-center "><i class="fa fa-user"></i><b> OUR CLIENTS</b></h2>
+    <h4  class="w3-text-white w3-center ">Some of our Prestegious clients</h4>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Bitter" rel="stylesheet" type="text/css">
+  <div class="w3-row">
+    <div class="col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="carousel123">
+        <div class="carousel-inner">
+          
+            
+
+         <div class="item active">
+            <div class=" col-xs-12 col-sm-6 col-md-3 w3-border-grey w3-border w3-padding-32">
+              <img src="z1.png" class="img-responsive" style="min-height: 80px;max-height: 80px">
+            </div>
+          </div>
+        <div class="item ">
+            <div class="col-xs-12 col-sm-6 col-md-3 w3-border-grey w3-border w3-padding-32 ">
+              <img src="z2.png" class="img-responsive w3-white" style="min-height: 80px;max-height: 80px">
+            </div>
+        </div>
+          <div class="item ">
+            <div class="col-xs-12 col-sm-6 col-md-3 w3-border-grey w3-border w3-padding-32 ">
+              <img src="z3.jpg" class="img-responsive w3-white" style="min-height: 80px;max-height: 80px">
+            </div>
+          </div>
+          <div class="item ">
+            <div class="col-xs-12 col-sm-6 col-md-3 w3-border-grey w3-border w3-padding-32 ">
+              <img src="z4.png" class="img-responsive w3-white" style="min-height: 80px;max-height: 80px;padding-left: 60px;padding-right: 60px">
+            </div>
+          </div>
+          <div class="item ">
+            <div class="col-xs-12 col-sm-6 col-md-3 w3-border-grey w3-border w3-padding-32 ">
+              <img src="z5.jpeg" class="img-responsive w3-white" style="min-height: 80px;max-height: 80px;padding-left: 60px;padding-right: 60px">
+            </div>
+          </div>
+          <div class="item ">
+            <div class=" col-xs-12 col-sm-6 col-md-3 w3-border-grey w3-border w3-padding-32">
+              <img src="z1.png" class="img-responsive" style="min-height: 80px;max-height: 80px">
+            </div>
+          </div>
+        <div class="item ">
+            <div class="col-xs-12 col-sm-6 col-md-3 w3-border-grey w3-border w3-padding-32 ">
+              <img src="z2.png" class="img-responsive w3-white" style="min-height: 80px;max-height: 80px">
+            </div>
+          </div>
+          <div class="item ">
+            <div class="col-xs-12 col-sm-6 col-md-3 w3-border-grey w3-border w3-padding-32 ">
+              <img src="z3.jpg" class="img-responsive w3-white" style="min-height: 80px;max-height: 80px">
+            </div>
+          </div>
+          <div class="item ">
+            <div class="col-xs-12 col-sm-6 col-md-3 w3-border-grey w3-border w3-padding-32 ">
+              <img src="z4.png" class="img-responsive w3-white" style="min-height: 80px;max-height: 80px;padding-left: 60px;padding-right: 60px">
+            </div>
+          </div>
+          <div class="item ">
+            <div class="col-xs-12 col-sm-6 col-md-3 w3-border-grey w3-border w3-padding-32 ">
+              <img src="z5.jpeg" class="img-responsive w3-white" style="min-height: 80px;max-height: 80px;padding-left: 60px;padding-right: 60px">
+            </div>
+          </div>
+           
+
+
+        </div>
+        <a class="left carousel-control" href="#carousel123" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+        <a class="right carousel-control" href="#carousel123" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+      </div>
+    </div>
+  </div>
+    
+
+</div>
+</div>
+<!--client review-->
+<div class="w3-container w3-grey w3-padding-64 w3-center" >
+  <div class="w3-content">
+    <h2 class="w3-text-white"><i class="fa fa-user"></i><b> CLIENT REVIEWS</b></h2>
+    <h4  class="w3-text-white">What our partners say</h4>
+    <div class="w3-container">
+  
+  <div class="w3-panel w3-card-4 w3-light-grey w3-hover-shadow" style="width:100%">
+    <p class=" w3-large w3-serif">
+    <i class="fa fa-quote-right w3-xxlarge w3-text-red"></i><br>
+    Friendly developers, beautiful looking website and lifetime maintenance and support. What else do we need!!
+   </p>
+   <p class=" w3-large">-
+    <i class="fa fa-user "></i><b> Avadi Financial Service</b></p> 
+
+  </div>
+   <div class="w3-panel w3-card-4 w3-light-grey " style="width:100%">
+    <p class=" w3-large w3-serif">
+    <i class="fa fa-quote-right w3-xxlarge w3-text-red"></i><br>
+    World Class website at very low rate. I am very satisfied and look forward to work with them again.</p>
+    <p class=" w3-large">-
+    <i class="fa fa-user "></i><b> WeldMake Engineering And Chemical</b></p> 
+  </div>
+  <div class="w3-panel w3-card-4 w3-light-grey " style="width:100%">
+    <p class=" w3-large w3-serif">
+    <i class="fa fa-quote-right w3-xxlarge w3-text-red"></i><br>
+    Stunning UI and graphic design on par with big names in the industry. Go for it!!</p>
+    <p class=" w3-large">-
+    <i class="fa fa-user "></i><b> Fluidfix</b></p> 
+  </div>
+</div>
+
+  </div>
+</div>
+
+
+
+
+<!--our service-->
+ <div class="w3-container w3-light-grey w3-padding-32 bgimg-2" id="services" >
+  <div class="w3-content">
+  <h1 class="w3-center w3-text-white"><i class="fa fa-gears"></i> <strong> OUR SERVICES </strong></h1>
+  <h4 class="w3-center w3-text-white"><b>What work we do</b></h4>
+  
+  <div class="w3-panel w3-card-4 w3-light-grey" style="width:100%">
+    <h1>Website Development <i class="fa fa-laptop"></i></h1>
+    <p class=" w3-large w3-serif">
+    <li>Responsive website design </li>
+    <li>Search Engine Optimisation</li>
+    <li>On time delivery</li>
+    <li>Customer's satisfaction</li>
+    <br>
+    <b>We give shape to your idea. Take your business online with us and let the world know you.</b>
+    </p>
+  </div>
+  <div class="w3-panel w3-card-4 w3-light-grey " style="width:100%">
+    <h1>Graghic Design <i class=" fa fa-code-fork"></i></h1>
+    <p class=" w3-large w3-serif">
+    <li>Logo design </li>
+    <li>Broucher design</li>
+    <li>Catalogue design</li>
+    <li>Visiting card design</li>
+    <li>Letterhead design</li>
+    <li>Flyer design</li>
+    <li>Poster design</li>
+    <br>
+    <b>We give shape to your idea. Bring your imagination into reality with us.</b>
+    </p>
+  </div>
+
+
+
+</div>
+</div>
+<!-- Pricing Section -->
+<div class="w3-container w3-center w3-dark-grey"  id="pricing">
+  <div class="w3-content w3-padding-32">
+  <h1 ><i class="fa fa-money"></i><b> PRICING FOR WEBSITE</b></h1>
+  <h4 class="w3-large">Choose a plan that fits your needs.</h4>
+  <p>(*Prices are negotiable)</p>
+  <div class="w3-row-padding" style="margin-top:64px">
+    <div class="w3-third w3-section">
+      <ul class="w3-ul w3-white w3-hover-shadow">
+        <li class="w3-black w3-xlarge w3-padding-32">Dynamic Website</li>
+        <li class="w3-padding-16"><b>₹ 12000*</b></li>
+        <li class="w3-padding-16"><b>4</b> Pages with Login and Signup</li>
+        <li class="w3-padding-16"><b>₹ 800</b> per additional page</li>
+        <li class="w3-padding-16"><b>Free </b>Domain</li>
+        <li class="w3-padding-16"><b>Endless</b> Support</li>
+        <!--<li class="w3-light-grey w3-padding-24">
+          <button class="w3-button w3-black w3-padding-large">Contact Us</button>
+        </li>-->
+      </ul>
+    </div>
+    <div class="w3-third">
+      <ul class="w3-ul w3-white w3-hover-shadow">
+        <li class="w3-red w3-xlarge w3-padding-48">Static Website</li>
+        <li class="w3-padding-16"><b>₹ 4000*</b></li>
+        <li class="w3-padding-16"><b>3</b> Fully Responsive Pages</li>
+        <li class="w3-padding-16"><b>₹ 500 </b>per additional pages</li>
+        <li class="w3-padding-16"><b>Free </b>Domain</li>
+        <li class="w3-padding-16"><b>Endless</b> Support</li>
+        
+        <!--<li class="w3-light-grey w3-padding-24">
+          <button class="w3-button w3-black w3-padding-large">Contact Us</button>
+        </li>-->
+      </ul>
+    </div>
+    <div class="w3-third w3-section">
+      <ul class="w3-ul w3-white w3-hover-shadow">
+        <li class="w3-black w3-xlarge w3-padding-32">Ecommerce Site</li>
+        <li class="w3-padding-16"><b>₹ 21000*</b></li>
+        <li class="w3-padding-16"><b>Full</b> site Build</li>
+        <li class="w3-padding-16"><b>₹ 1500</b> Annual maintanace Charge</li>
+        <li class="w3-padding-16"><b>Free </b> Domain</li>
+        <li class="w3-padding-16"><b>Endless</b> Support</li>
+        
+       <!-- <li class="w3-light-grey w3-padding-24">
+          <button class="w3-button w3-black w3-padding-large">Contact Us</button>
+        </li>-->
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+
+<!--contact us-->
+<!--contactus-->
+<div class=" w3-container contactus  w3-padding-32 bgimg-4 " id="contact" >
+<div class="w3-content w3-justify   " >
+ <h2 class="w3-xxlarge w3-text-white w3-center"><b>CONTACT US <i class="fa fa-envelope"> </i></b></h2>
+    <!--<hr style="width:40px;border:5px solid white; text-align: center;" class="w3-round">-->
+    
+<div class="w3-row   w3-section w3-left-align w3-text-white  ">
+      <div class="w3-third w3-section w3-margin-16">
+        
+        <i class="  fa fa-map-marker" style="font-size:36px;">
+        
+        <span class="w3-large">Address</span><br></i>
+        <hr style="width:25%">
+        <p class="l">OnClickHub<br> 
+        Korattur, Chennai – 600080<br>
+        Tamil Nadu, India<br>
+        <br></p>
+        </div>
+
+      <div class="w3-third w3-section">
+        <i class="fa fa-phone" style="font-size:36px">
+        <span class="w3-large">Phone Number:</span><br></i>
+        <hr style="width:25%">
+        <p class="l">+91 8667710302</br>
+        +91 9087213680</br>
+        +91 8667887184</br></p>
+      </div>
+      <div class="w3-third w3-section">
+        <i class="fa fa-envelope" style="font-size:36px">
+        
+        <span class="w3-large">Email: </span><br></i>
+        <hr style="width:25%">
+        <p class="l">contactus@onclickhub.com</br></p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd24Rd_RQolqeoA1myA-exmr6DByrmdwq6n4dn6-9MxI-e4bg/viewform?usp=sf_link" target="_blank"><button class="w3-grey w3-button"> <i class="fa fa-paper-plane"></i> Email Us</button></a>
+      </div>
+      
+    </div>
+
+</div>
+</div>
+<div class=" w3-container contactus "  style="background-color: black">
+   <h5 style="color: white " class="w3-center">Copyright © 2018 All rights reserved. OnClickHub</h5>
+</div> 
+
+
+
+
+
+<script type="text/javascript">
+  (function() {
+
+  'use strict';
+
+  // define variables
+  var items = document.querySelectorAll(".timeline li");
+
+  // check if an element is in viewport
+  // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
+  function isElementInViewport(el) {
+    var rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  function callbackFunc() {
+    for (var i = 0; i < items.length; i++) {
+      if (isElementInViewport(items[i])) {
+        items[i].classList.add("in-view");
+      }
+    }
+  }
+
+  // listen for events
+  window.addEventListener("load", callbackFunc);
+  window.addEventListener("resize", callbackFunc);
+  window.addEventListener("scroll", callbackFunc);
+
+})();
+(function(){
+  // setup your carousels as you normally would using JS
+  // or via data attributes according to the documentation
+  // https://getbootstrap.com/javascript/#carousel
+  $('#carousel123').carousel({ interval: 2000 });
+  $('#carouselABC').carousel({ interval: 3600 });
+}());
+
+(function(){
+  $('.carousel-showmanymoveone .item').each(function(){
+    var itemToClone = $(this);
+
+    for (var i=1;i<4;i++) {
+      itemToClone = itemToClone.next();
+
+      // wrap around if at end of item collection
+      if (!itemToClone.length) {
+        itemToClone = $(this).siblings(':first');
+      }
+
+      // grab item, clone, add marker class, add to collection
+      itemToClone.children(':first-child').clone()
+        .addClass("cloneditem-"+(i))
+        .appendTo($(this));
+    }
+  });
+}());
+    // Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+    } else {
+        mySidebar.style.display = 'block';
+    }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+
+
+  
+
+
+</script>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5b0ed4bb10b99c7b36d4786f/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+
+</body>
+</html>
+
+
+
+
